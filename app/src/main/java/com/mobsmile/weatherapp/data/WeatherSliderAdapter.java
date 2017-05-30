@@ -5,8 +5,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mobsmile.weatherapp.R;
-import com.mobsmile.weatherapp.WeatherSliderViewHolder;
-import com.mobsmile.weatherapp.data.ClickableAdapter;
 import com.mobsmile.weatherapp.model.Forecast;
 
 import butterknife.ButterKnife;

@@ -1,8 +1,6 @@
 package com.mobsmile.weatherapp.network;
 
-import com.mobsmile.weatherapp.ForecastResponse;
-
-import java.util.Map;
+import com.mobsmile.weatherapp.model.ForecastResponse;
 
 import rx.Observable;
 
@@ -13,12 +11,12 @@ public class NetworkManager {
     private final String APP_ID = "53b12e8a5ac738ff5ad13a5895d06b0c";
     private API api;
 
-    public NetworkManager(API api) {
-        this.api = api;
-    }
-
     public NetworkManager() {
         this(new NetworkHelper().getAPI());
+    }
+
+    public NetworkManager(API api) {
+        this.api = api;
     }
 
     public Observable<ForecastResponse> getForecastById(int id) {

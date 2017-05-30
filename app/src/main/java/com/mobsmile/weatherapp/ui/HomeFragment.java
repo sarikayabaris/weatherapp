@@ -1,4 +1,4 @@
-package com.mobsmile.weatherapp;
+package com.mobsmile.weatherapp.ui;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -7,13 +7,20 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.mobsmile.weatherapp.R;
+import com.mobsmile.weatherapp.caller.HomeCaller;
 import com.mobsmile.weatherapp.data.WeatherSliderAdapter;
 import com.mobsmile.weatherapp.model.Forecast;
+import com.mobsmile.weatherapp.model.ForecastResponse;
 import com.mobsmile.weatherapp.network.NetworkManager;
+import com.mobsmile.weatherapp.presenter.HomePresenter;
 
 import java.util.List;
 
@@ -38,6 +45,8 @@ public class HomeFragment extends Fragment implements HomePresenter.View {
     public TextView mainTemp;
     @BindView(R.id.progress_bar)
     public ProgressBar progressBar;
+    @BindView(R.id.main_background)
+    public ImageView mainBackground;
     private WeatherSliderAdapter adapter = new WeatherSliderAdapter();
 
     @Override
@@ -67,7 +76,11 @@ public class HomeFragment extends Fragment implements HomePresenter.View {
 
     @Override
     public void updateTopDetailScreen(Forecast forecast) {
-        mainTemp.setText(String.valueOf(forecast.getMain().getTemp()));
+        mainTemp.setText(forecast.getMain().getTemp() + " \u2103");
+        Glide.with(getActivity()).load(forecast.getWeathers().get(0).getIconUrl())
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .centerCrop()
+                .into(mainBackground);
     }
 
     @Override
@@ -89,6 +102,10 @@ public class HomeFragment extends Fragment implements HomePresenter.View {
     @Override
     public void updateCityName(ForecastResponse response) {
         mainName.setText(response.getCity().getName() + ", " + response.getCity().getCountry());
-        mainTemp.setText(String.valueOf(response.getForecasts().get(0).getMain().getTemp()));
+        mainTemp.setText(response.getForecasts().get(0).getMain().getTemp() + " \u2103");
+        Glide.with(getActivity()).load(response.getForecasts().get(0).getWeathers().get(0).getIconUrl())
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .centerCrop()
+                .into(mainBackground);
     }
 }

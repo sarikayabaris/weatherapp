@@ -3,12 +3,10 @@ package com.mobsmile.weatherapp.model;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by barismac on 29/05/2017.
- * Params ${PARAM}
+ * This file created by barissarikaya on 5/29/17.
  */
-
 public class Main {
-    private final double difference = 173.15;
+    private final double difference = 273.15;
     @SerializedName("temp")
     private double temp;
     @SerializedName("temp_min")
@@ -28,8 +26,8 @@ public class Main {
         this.humidity = humidity;
     }
 
-    public double getTemp() {
-        return temp - difference;
+    public int getTemp() {
+        return (int) (temp - difference);
     }
 
     public double getTempMin() {

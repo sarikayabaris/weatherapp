@@ -1,5 +1,6 @@
-package com.mobsmile.weatherapp;
+package com.mobsmile.weatherapp.caller;
 
+import com.mobsmile.weatherapp.model.ForecastResponse;
 import com.mobsmile.weatherapp.network.NetworkManager;
 
 /**

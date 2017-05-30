@@ -1,4 +1,4 @@
-package com.mobsmile.weatherapp;
+package com.mobsmile.weatherapp.model;
 
 import com.google.gson.annotations.SerializedName;
 import com.mobsmile.weatherapp.model.City;

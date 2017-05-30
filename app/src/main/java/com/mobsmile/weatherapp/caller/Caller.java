@@ -1,11 +1,10 @@
-package com.mobsmile.weatherapp;
+package com.mobsmile.weatherapp.caller;
+
+import com.mobsmile.weatherapp.network.Cache;
 
 import retrofit2.adapter.rxjava.HttpException;
 import rx.Observable;
-import rx.Scheduler;
-import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func0;
-import rx.schedulers.Schedulers;
 import rx.subjects.BehaviorSubject;
 import rx.subjects.PublishSubject;
 

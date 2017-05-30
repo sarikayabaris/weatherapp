@@ -1,5 +1,7 @@
-package com.mobsmile.weatherapp;
+package com.mobsmile.weatherapp.presenter;
 
+import com.mobsmile.weatherapp.model.ForecastResponse;
+import com.mobsmile.weatherapp.caller.HomeCaller;
 import com.mobsmile.weatherapp.model.Forecast;
 
 import java.util.List;

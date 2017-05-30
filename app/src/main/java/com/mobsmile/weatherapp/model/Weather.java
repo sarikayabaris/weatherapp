@@ -3,10 +3,8 @@ package com.mobsmile.weatherapp.model;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by barismac on 30/05/2017.
- * Params ${PARAM}
+ * This file created by barissarikaya on 5/29/17.
  */
-
 public class Weather {
     private final String ICON_URL = "http://openweathermap.org/img/w/";
     @SerializedName("id")

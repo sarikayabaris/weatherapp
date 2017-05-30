@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import rx.subjects.PublishSubject;
+
 /**
  * This file created by barissarikaya on 5/29/17.
  */

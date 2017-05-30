@@ -1,6 +1,6 @@
 package com.mobsmile.weatherapp.network;
 
-import com.mobsmile.weatherapp.ForecastResponse;
+import com.mobsmile.weatherapp.model.ForecastResponse;
 
 import retrofit2.http.GET;
 import retrofit2.http.Query;

@@ -1,4 +1,4 @@
-package com.mobsmile.weatherapp;
+package com.mobsmile.weatherapp.network;
 
 import rx.Observable;
 import rx.subjects.PublishSubject;

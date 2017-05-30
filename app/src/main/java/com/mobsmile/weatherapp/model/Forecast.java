@@ -5,10 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * Created by barismac on 29/05/2017.
- * Params ${PARAM}
+ * This file created by barissarikaya on 5/29/17.
  */
-
 public class Forecast {
     @SerializedName("dt")
     private long id;
